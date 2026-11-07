@@ -1,0 +1,246 @@
+{
+  "project": "MODA",
+  "raw_rows": {
+    "Customers": 500,
+    "Products": 100,
+    "Transactions": 2000,
+    "Transaction_Items": 7064,
+    "Categories": 10
+  },
+  "clean_rows": {
+    "Customers": 490,
+    "Products": 95,
+    "Transactions": 1990,
+    "Transaction_Items": 7054,
+    "Categories": 10
+  },
+  "logged_issue_records": 382,
+  "validation_checks_passed": 14,
+  "validation_checks_total": 14,
+  "validation": {
+    "Customers.Customer_ID unique": true,
+    "Products.Product_ID unique": true,
+    "Transactions.Transaction_ID unique": true,
+    "Transaction_Items.Item_ID unique": true,
+    "Transactions.Customer_ID valid": true,
+    "Items.Transaction_ID valid": true,
+    "Items.Product_ID valid": true,
+    "Products.Category_ID valid": true,
+    "No missing values in analytical columns": true,
+    "Nonnegative product prices": true,
+    "Nonnegative stock": true,
+    "Positive item quantities": true,
+    "Nonnegative item unit prices": true,
+    "Nonnegative transaction amounts": true
+  },
+  "kmeans_k": 3,
+  "kmeans_silhouette_scores": [
+    {
+      "K": 2,
+      "Silhouette_Score": 0.44518486951925607
+    },
+    {
+      "K": 3,
+      "Silhouette_Score": 0.3726372011238763
+    },
+    {
+      "K": 4,
+      "Silhouette_Score": 0.3785445800747836
+    },
+    {
+      "K": 5,
+      "Silhouette_Score": 0.3943354151728397
+    },
+    {
+      "K": 6,
+      "Silhouette_Score": 0.38464088309148714
+    }
+  ],
+  "kmeans_segments": [
+    {
+      "Cluster_ID": 0,
+      "Segment": "High Value",
+      "Customers": 95,
+      "Avg_Orders": 7.010526315789473,
+      "Avg_Spending": 1912.2295789473685,
+      "Avg_Order_Value": 276.13610294705296
+    },
+    {
+      "Cluster_ID": 1,
+      "Segment": "Low Value",
+      "Customers": 195,
+      "Avg_Orders": 1.9384615384615385,
+      "Avg_Spending": 351.7454358974359,
+      "Avg_Order_Value": 163.25978974358975
+    },
+    {
+      "Cluster_ID": 2,
+      "Segment": "Regular",
+      "Customers": 200,
+      "Avg_Orders": 2.85,
+      "Avg_Spending": 850.8019,
+      "Avg_Order_Value": 316.8856025
+    }
+  ],
+  "apriori_min_support": 0.01,
+  "apriori_min_confidence": 0.25,
+  "apriori_rules_count": 45,
+  "top_apriori_rules": [
+    {
+      "Antecedent_ID": "P046",
+      "Antecedent": "Summer Dress",
+      "Consequent_ID": "P063",
+      "Consequent": "Sandals",
+      "Support": 0.05125628140703518,
+      "Confidence": 0.6754966887417219,
+      "Lift": 11.895915138017934,
+      "Transactions_With_Both": 102
+    },
+    {
+      "Antecedent_ID": "P063",
+      "Antecedent": "Sandals",
+      "Consequent_ID": "P046",
+      "Consequent": "Summer Dress",
+      "Support": 0.05125628140703518,
+      "Confidence": 0.9026548672566371,
+      "Lift": 11.895915138017932,
+      "Transactions_With_Both": 102
+    },
+    {
+      "Antecedent_ID": "P087",
+      "Antecedent": "Leather Jacket",
+      "Consequent_ID": "P060",
+      "Consequent": "Ankle Boots",
+      "Support": 0.08844221105527639,
+      "Confidence": 0.9166666666666666,
+      "Lift": 9.451640759930916,
+      "Transactions_With_Both": 176
+    },
+    {
+      "Antecedent_ID": "P060",
+      "Antecedent": "Ankle Boots",
+      "Consequent_ID": "P087",
+      "Consequent": "Leather Jacket",
+      "Support": 0.08844221105527639,
+      "Confidence": 0.9119170984455959,
+      "Lift": 9.451640759930916,
+      "Transactions_With_Both": 176
+    },
+    {
+      "Antecedent_ID": "P066",
+      "Antecedent": "Oxford Shoes",
+      "Consequent_ID": "P080",
+      "Consequent": "Belt",
+      "Support": 0.06482412060301508,
+      "Confidence": 0.7818181818181819,
+      "Lift": 8.941483803552769,
+      "Transactions_With_Both": 129
+    },
+    {
+      "Antecedent_ID": "P080",
+      "Antecedent": "Belt",
+      "Consequent_ID": "P066",
+      "Consequent": "Oxford Shoes",
+      "Support": 0.06482412060301508,
+      "Confidence": 0.7413793103448276,
+      "Lift": 8.941483803552769,
+      "Transactions_With_Both": 129
+    },
+    {
+      "Antecedent_ID": "P066",
+      "Antecedent": "Oxford Shoes",
+      "Consequent_ID": "P090",
+      "Consequent": "Blazer",
+      "Support": 0.06532663316582915,
+      "Confidence": 0.7878787878787878,
+      "Lift": 8.123724289527399,
+      "Transactions_With_Both": 130
+    },
+    {
+      "Antecedent_ID": "P090",
+      "Antecedent": "Blazer",
+      "Consequent_ID": "P066",
+      "Consequent": "Oxford Shoes",
+      "Support": 0.06532663316582915,
+      "Confidence": 0.6735751295336787,
+      "Lift": 8.123724289527399,
+      "Transactions_With_Both": 130
+    },
+    {
+      "Antecedent_ID": "P071",
+      "Antecedent": "Clutch",
+      "Consequent_ID": "P061",
+      "Consequent": "High Heels",
+      "Support": 0.07587939698492463,
+      "Confidence": 0.7626262626262627,
+      "Lift": 8.029768585324142,
+      "Transactions_With_Both": 151
+    },
+    {
+      "Antecedent_ID": "P061",
+      "Antecedent": "High Heels",
+      "Consequent_ID": "P071",
+      "Consequent": "Clutch",
+      "Support": 0.07587939698492463,
+      "Confidence": 0.798941798941799,
+      "Lift": 8.02976858532414,
+      "Transactions_With_Both": 151
+    },
+    {
+      "Antecedent_ID": "P080",
+      "Antecedent": "Belt",
+      "Consequent_ID": "P090",
+      "Consequent": "Blazer",
+      "Support": 0.06633165829145729,
+      "Confidence": 0.7586206896551724,
+      "Lift": 7.822047525460068,
+      "Transactions_With_Both": 132
+    },
+    {
+      "Antecedent_ID": "P090",
+      "Antecedent": "Blazer",
+      "Consequent_ID": "P080",
+      "Consequent": "Belt",
+      "Support": 0.06633165829145729,
+      "Confidence": 0.6839378238341969,
+      "Lift": 7.822047525460067,
+      "Transactions_With_Both": 132
+    },
+    {
+      "Antecedent_ID": "P091",
+      "Antecedent": "Wool Coat",
+      "Consequent_ID": "P081",
+      "Consequent": "Scarf",
+      "Support": 0.08190954773869347,
+      "Confidence": 0.7799043062200957,
+      "Lift": 7.2186491598976295,
+      "Transactions_With_Both": 163
+    },
+    {
+      "Antecedent_ID": "P081",
+      "Antecedent": "Scarf",
+      "Consequent_ID": "P091",
+      "Consequent": "Wool Coat",
+      "Support": 0.08190954773869347,
+      "Confidence": 0.7581395348837209,
+      "Lift": 7.2186491598976295,
+      "Transactions_With_Both": 163
+    },
+    {
+      "Antecedent_ID": "P063",
+      "Antecedent": "Sandals",
+      "Consequent_ID": "P082",
+      "Consequent": "Sunglasses",
+      "Support": 0.05125628140703518,
+      "Confidence": 0.9026548672566371,
+      "Lift": 6.007636073045846,
+      "Transactions_With_Both": 102
+    }
+  ],
+  "transaction_reconciliation": {
+    "Transactions_With_Items": 1990,
+    "Transaction_Item_Total_Matches_Within_0.01": 1990,
+    "Max_Absolute_Amount_Difference": 1.1368683772161603e-13
+  },
+  "method_note": "Original values for deliberately injected errors were recovered using the supplied errors_log.csv. This is benchmark-assisted restoration, not an independent blind prediction model."
+}
